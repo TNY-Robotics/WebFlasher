@@ -12,4 +12,7 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'github-pages'
   },
+  app: {
+    baseURL: '/WebFlasher/', 
+  }
 })
