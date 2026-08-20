@@ -7,7 +7,7 @@
             <UIcon v-if="progress !== true" name="lucide:loader-2" class="w-4 h-4 animate-spin" />
         </div>
         <div class="flex space-x-4 w-full justify-center items-center h-3">
-            <div class="flex w-full rounded-full overflow-hidden bg-slate-800 h-1.5">
+            <div class="flex w-full rounded-full overflow-hidden bg-slate-200 dark:bg-slate-800 h-1.5">
                 <span v-if="progress === undefined" class="h-full rounded-full w-1/3 animate-slide" :class="`bg-${statusColor}-500`" />
                 <span v-else-if="progress === true" class="h-full rounded-full w-full" :class="`bg-${statusColor}-500`" />
                 <span v-else class="h-full rounded-full transition-all duration-500" :class="`bg-${statusColor}-500`" :style="{ width: progress + '%' }" />

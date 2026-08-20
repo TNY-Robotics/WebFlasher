@@ -7,10 +7,10 @@
                     <UIcon name="lucide:square-terminal" class="w-12 h-12 text-primary" />
                     <h1> <span class="text-primary font-black">TNY</span> Web Flasher </h1>
                 </div>
-                <p class="font-semibold text-lg text-slate-700 dark:text-slate-400"> Flash any firmware on your TNY robots </p>
+                <p class="font-semibold text-lg text-slate-500 dark:text-slate-400"> Flash any firmware on your TNY robots </p>
             </div>
             <!-- Selection -->
-            <div ref="selectContainer" class="selectContainer show-up delay-200 bg-slate-800 rounded-lg border-2 border-slate-700 overflow-hidden" style="max-width: 0;">
+            <div ref="selectContainer" class="selectContainer show-up delay-200 bg-slate-50 dark:bg-slate-800 rounded-lg border-2 border-slate-200 dark:border-slate-700 overflow-hidden" style="max-width: 400px;">
                 <div class="flex flex-row gap-6 min-w-max h-full p-3">
                     <div class="flex flex-col space-y-1 min-w-fit">
                         <p> Robot type </p>
@@ -24,8 +24,8 @@
                         <p> Device </p>
                         <UButton v-if="config.device === null" @click="askForDevice" :loading="deviceSelectLoading" variant="subtle" icon="lucide:unplug">Connect</UButton>
                         <div v-else class="relative">
-                            <div class="flex items-center justify-center space-x-2 px-2 py-1 bg-slate-900 rounded-md border border-slate-700 pointer-events-none">
-                                <p class="text-white" style="font-size: 0.9em;"> {{ chipName ?? 'Detecting' }} </p>
+                            <div class="flex items-center justify-center space-x-2 px-2 py-1 bg-white dark:bg-slate-900 rounded-md border border-slate-200 dark:border-slate-700 pointer-events-none">
+                                <p class="text-slate-800 dark:text-white" style="font-size: 0.9em;"> {{ chipName ?? 'Detecting' }} </p>
                                 <UIcon :name="chipName === null? 'lucide:loader-2' : 'lucide:check'" class="w-4 h-4 text-slate-500" :class="chipName === null ? 'animate-spin' : ''" />
                             </div>
                             <div class="opacity-0 hover:opacity-100 transition-opacity absolute top-0 left-0 w-full h-full bg-slate-800">
