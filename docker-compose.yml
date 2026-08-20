@@ -1,0 +1,6 @@
+name: tnyrobotics-flasher
+services:
+  web:
+    build: .
+    ports:
+      - 2098:3000
