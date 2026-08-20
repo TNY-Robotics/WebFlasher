@@ -13,6 +13,12 @@ export default defineNuxtConfig({
     preset: 'github-pages'
   },
   app: {
-    baseURL: '/WebFlasher/', 
+    baseURL: '/WebFlasher/',
+    buildAssetsDir: 'assets',
+    head: {
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/WebFlasher/favicon.ico' }
+      ]
+    }
   }
 })
