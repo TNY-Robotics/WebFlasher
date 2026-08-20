@@ -10,11 +10,7 @@ h1 {
 }
 
 h2 {
-    @apply text-2xl font-bold;
-}
-
-h3 {
-    @apply text-xl font-semibold;
+    @apply text-xl font-bold;
 }
 
 @keyframes show {
@@ -60,4 +56,8 @@ h3 {
 
 button {
     @apply cursor-pointer;
+}
+
+code {
+    @apply px-1 py-0.5 rounded bg-slate-300 dark:bg-slate-950 border border-slate-50 dark:border-slate-700 font-mono;
 }

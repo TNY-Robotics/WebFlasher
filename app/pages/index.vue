@@ -122,7 +122,6 @@ const flashing = ref(false);
 async function flashFirmware() {
     flashing.value = true;
 }
-    
 
 onMounted(async () => {
     // if (window.location.hostname === 'localhost') {
