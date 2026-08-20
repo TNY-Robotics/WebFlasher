@@ -25,6 +25,15 @@
 
 <script setup lang="ts">
 
+useSeoMeta({
+    title: 'TNY Web Flasher - Firmware Flasher for TNY Robots',
+    description: 'Flash any firmware on your TNY robots in a simple and easy way. No installation required, just select your robot and firmware, and flash it in seconds.',
+    ogTitle: 'TNY Web Flasher - Firmware Flasher for TNY Robots',
+    ogDescription: 'Flash any firmware on your TNY robots in a simple and easy way. No installation required, just select your robot and firmware, and flash it in seconds.',
+    ogImage: '/favicon.png',
+    ogUrl: 'https://flasher.tny-robotics.com',
+});
+
 const compatModalOpen = ref(false);
 function checkBrowserCompatibility() {
     const userAgent = navigator.userAgent;

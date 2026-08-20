@@ -4,7 +4,7 @@
             <!-- Title -->
             <div class="show-down flex flex-col justify-center items-center pb-4">
                 <div class="flex space-x-4 justify-center items-center">
-                    <UIcon name="lucide:terminal" class="w-12 h-12 text-primary" />
+                    <UIcon name="lucide:square-terminal" class="w-12 h-12 text-primary" />
                     <h1> <span class="text-primary font-black">TNY</span> Web Flasher </h1>
                 </div>
                 <p class="font-semibold text-lg text-slate-700 dark:text-slate-400"> Flash any firmware on your TNY robots </p>
