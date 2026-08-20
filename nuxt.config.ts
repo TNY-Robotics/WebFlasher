@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   },
   app: {
     baseURL: '/WebFlasher/',
-    buildAssetsDir: 'assets',
+    buildAssetsDir: '/assets/',
     head: {
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/WebFlasher/favicon.ico' }
