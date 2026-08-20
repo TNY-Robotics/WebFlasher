@@ -50,13 +50,21 @@ async function downloadAsset(asset: {name: string, id: number, size: number}) {
     const url = RELEASE_ASSET_API_URL(ROBOT_REPOS[config.robotType], asset.id.toString());
 
     try {
-        const blob = await $fetch('/api/github-asset', {
-            method: 'GET',
-            query: { url: url },
-            responseType: 'blob'
-        }) as Blob;
-        console.log(`Downloaded ${asset.name}`, blob);
-        return blob;
+        const USE_PROXY = false;
+        if (USE_PROXY) {
+            return await $fetch('/api/github-asset', {
+                method: 'GET',
+                query: { url: url },
+                responseType: 'blob'
+            }) as Blob;
+        }
+        else {
+            const response = await fetch(url, { method: 'GET', headers: { 'Accept': 'application/octet-stream', } });
+            if (!response.ok) {
+                throw new Error(`Failed to download ${asset.name}: ${response.status} ${response.statusText}`);
+            }
+            return await response.blob();
+        }
     } catch (err) {
         console.error(`Failed to download ${asset.name}:`, err);
         setStatus(`Failed to download ${asset.name}`, 'red');
