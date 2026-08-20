@@ -62,6 +62,9 @@ jobs:
         with:
           path: .output/public # <-- Nouveau chemin de sortie de Nuxt 3/4
 
+      - name: debug nuxt config file
+        run: cat nuxt.config.ts
+
   deploy:
     environment:
       name: github-pages
