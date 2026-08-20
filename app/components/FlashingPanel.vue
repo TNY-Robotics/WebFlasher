@@ -50,7 +50,7 @@ async function downloadAsset(asset: {name: string, id: number, size: number}) {
     const url = RELEASE_ASSET_API_URL(ROBOT_REPOS[config.robotType], asset.id.toString());
 
     try {
-        const USE_PROXY = false;
+        const USE_PROXY = true;
         if (USE_PROXY) {
             return await $fetch('/api/github-asset', {
                 method: 'GET',
@@ -59,7 +59,7 @@ async function downloadAsset(asset: {name: string, id: number, size: number}) {
             }) as Blob;
         }
         else {
-            const response = await fetch("https://corsproxy.io/?url=" + encodeURIComponent(url), { method: 'GET', headers: { 'Accept': 'application/octet-stream', } });
+            const response = await fetch(url, { method: 'GET', headers: { 'Accept': 'application/octet-stream', } });
             if (!response.ok) {
                 throw new Error(`Failed to download ${asset.name}: ${response.status} ${response.statusText}`);
             }
