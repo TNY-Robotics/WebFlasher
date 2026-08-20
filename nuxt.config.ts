@@ -9,4 +9,7 @@ export default defineNuxtConfig({
       { name: 'Poppins', weights: ['300', '400', '500', '700', '900'], styles: ['normal', 'italic'] },
     ]
   },
+  nitro: {
+    preset: 'github-pages'
+  },
 })
